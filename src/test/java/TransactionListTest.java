@@ -70,7 +70,6 @@ class TransactionListTest {
 		assertTrue(transactions.get(0).getValue() < transactions.get(1).getValue());
 	}
 
-
 	@Test
 	void testCities() {
 		// when
@@ -111,12 +110,13 @@ class TransactionListTest {
 
         // then
         assertEquals(2, map.size());
-        assertTrue(map.keySet().contains(2011));
-        assertTrue(map.keySet().contains(2012));
+        assertTrue(map.containsKey(2011)); // assertTrue(map.keySet().contains(2011));
+        assertTrue(map.containsKey(2012)); // assertTrue(map.keySet().contains(2012));
 
         assertEquals(2, map.get(2011).size());
         assertEquals(4, map.get(2012).size());
     }
+
 	@Test
 	void testTraderInCity() {
 		assertTrue(transactionList.traderInCity("Brugg"));
@@ -174,4 +174,5 @@ class TransactionListTest {
 		//then
 		assertEquals("AlanBrianMarioRaoul", names);
 	}
+
 }
